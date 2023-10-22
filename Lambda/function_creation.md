@@ -13,8 +13,7 @@
 - AWS service = EC2, Event type = EBS Volume Notification
 - Event Type = modifyVolume, createVolume
 - Select Target as Lambda Function and select the function we created.
-### 4. Modify the lambda function as [this](https://github.com/warlock601/AWS-Lambda-modify-volume/blob/346523b001604570bd737112ed8904b0a42100cd/Lambda/lambda_function.py)
-These are the things we did in the Lambda function:
+### 4. Modify the lambda function as [this](https://github.com/warlock601/AWS-Lambda-modify-volume/blob/346523b001604570bd737112ed8904b0a42100cd/Lambda/lambda_function.py), the code is elaborated below:
 - First we retrieved "arn" from the event. An event is a JSON-formatted document that contains data for a Lambda function to process. The Lambda runtime converts the event to an object and passes it to your function code. It is usually of the Python dict type.
 - An Event looks like this-
 ```bash
@@ -49,6 +48,14 @@ We can find the "arn" in "resources".
     volume_id = arn_parts[-1].split('/')[-1]         #the volume ID is the last part of the ARN after the 'volume/' prefix
     return volume_id
 ```
+- Now we specify the Client value. Clients provide a low-level interface to AWS whose methods map close to 1:1 with service APIs. Client is basically used to change the poarameters here. 
+```bash
+   client = boto3.client('ec2')
+```
+For S3, we can specify it as:
+```bash
+  client = boto3.client('s3')
+```
 - Next, we use modify_volume of boto3 module to change parameters of the EBS volume.<br />
   Boto3 is the name of the Python SDK for AWS. It allows you to directly create, update, and delete AWS resources from your Python scripts.<br />
   modify_volume : You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS capacity.
@@ -65,7 +72,7 @@ We can find the "arn" in "resources".
 ```
 we'll modify it as (as we don't need other parameters specified as such):
 ```bash
-  response = ec2_client.modify_volume(            # this is used to change parameters in EC2
+  response = client.modify_volume(                # this is used to change parameters in EC2
         VolumeId = volume_id,                     # we stored the volume-ID in this variable
         VolumeType = 'gp3',                       # as we want to change whatever volume-type is there, into "gp3"
     )

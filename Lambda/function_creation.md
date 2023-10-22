@@ -12,5 +12,5 @@
 - Select Event source = AWS events or EventBridge partner events
 - AWS service = EC2, Event type = EBS Volume Notification
 - Event Type = modifyVolume, createVolume
-- Select Target as Lambda Function
-### 4. 
+- Select Target as Lambda Function and select the function we created.
+### 4. Modify the lambda function as [this](https://github.com/warlock601/AWS-Lambda-modify-volume/blob/346523b001604570bd737112ed8904b0a42100cd/Lambda/lambda_function.py)

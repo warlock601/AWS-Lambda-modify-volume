@@ -1,4 +1,4 @@
-# AWS-Ninja Project Description
+# AWS-Lambda-modify-volume Project Description
 
 As a DevOps engineer, it's our responsibility to take care of the infrastructure and make sure it is in compliance with the organizational policies. Let say our company have attached GP2 type EBS volumes to all the instances but now they want to change to GP3 and even if any new instances are created, they also have GP3 type volumes attached to them by default. 
 </br>

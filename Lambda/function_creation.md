@@ -78,3 +78,20 @@ we'll modify it as (as we don't need other parameters specified as such):
     )
 
 ```
+Click on Deploy to save the function.
+### 5. After Deploying, go to CloudWatch > Log Groups & there you'll see logs being logged for your Lambda function whenever any EBS volume is being created.
+![Screenshot 2023-10-22 184258](https://github.com/warlock601/AWS-Lambda-modify-volume/assets/32487715/8db119f6-2980-40a6-8726-e0e030596eb4)
+
+### 6. Now whenever any EBS volume with type "gp2" is created, it will get changed to "gp3". <br />
+
+Before:<br />
+<br />
+![Screenshot 2023-10-22 184948](https://github.com/warlock601/AWS-Lambda-modify-volume/assets/32487715/8b8c4644-2ada-4e86-a825-7654b48f5b0f) <br />
+
+After:<br />
+<br />
+![Screenshot 2023-10-22 185052](https://github.com/warlock601/AWS-Lambda-modify-volume/assets/32487715/b79211a7-1406-4d38-8c39-8de5f82c0114)
+
+
+
+

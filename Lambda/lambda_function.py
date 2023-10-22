@@ -1,10 +1,8 @@
 import boto3
 
 def getvolumeidfrom_arn(volume_arn):
-    #split the ARN using colon :
-    arn_parts = volume_arn.split(':')
-    #the volume ID is the last part of the ARN after the 'volume/' prefix
-    volume_id = arn_parts[-1].split('/')[-1]
+    arn_parts = volume_arn.split(':')                #split the ARN using colon ":"
+    volume_id = arn_parts[-1].split('/')[-1]         #the volume ID is the last part of the ARN after the 'volume/' prefix
     return volume_id
 
 def lambda_handler(event, context):
@@ -15,7 +13,7 @@ def lambda_handler(event, context):
     
     ec2_client = boto3.client('ec2')
 
-    response = ec2_client.modify_volume(
+    response = ec2_client.modify_volume(            #this is used to change parameters in EC2
         VolumeId = volume_id,
         VolumeType = 'gp3',
     )

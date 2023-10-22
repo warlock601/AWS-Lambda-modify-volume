@@ -7,7 +7,7 @@
 - CreateLogStream
 - PutLogEvents
 ### 2. Now create a lambda function with Python-3 as Runtime and select the role we created using "Change default execution role" > "Use an existing role". Select the role that we just created. Then when we test this, we can see the Execution results.
-### 3. Next, go to CloudWatch to configure a rule that will trigger the lambda function.
+### 3. Next, go to CloudWatch to configure a rule (Amazon EventBridge) that will trigger the lambda function.
 - CloudWatch > Rules > Create Rule
 - Select Event source = AWS events or EventBridge partner events
 - AWS service = EC2, Event type = EBS Volume Notification

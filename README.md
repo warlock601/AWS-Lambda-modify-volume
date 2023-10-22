@@ -13,3 +13,5 @@ We can do this for any service, let say for S3, EKS etc. and make sure that our 
 **AWS Lambda**  <br/>
 **AWS CloudWatch** <br/>
 **Python**
+
+ We'll start from [here](https://github.com/warlock601/AWS-Lambda-modify-volume/blob/1c5e3549f280bdda3be67654ffe32bbfe07474e2/Lambda/function_creation.md)

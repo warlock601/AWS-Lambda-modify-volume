@@ -13,6 +13,7 @@ We can do this for any service, let say for S3, EKS etc. and make sure that our 
 **AWS Lambda**  <br/>
 **AWS CloudWatch** <br/>
 **Python** <br />
+**Boto3** <br />
 <br />
 ![arch](https://github.com/warlock601/AWS-Lambda-modify-volume/assets/32487715/114855d3-108f-4fce-8651-f65723e0e730)
 
